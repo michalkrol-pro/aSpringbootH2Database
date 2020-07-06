@@ -19,6 +19,11 @@ public class AppController {
         return "uczen/index";
     }
 
+    @GetMapping("/clean")
+    public ModelAndView clean() {
+        { listaUczniów.clear();}
+     return new ModelAndView(index()) ;}
+
     @RequestMapping(value = "/uczen_form", method = RequestMethod.GET)
     public String showForm() {
         return "uczen/uczen_form";
